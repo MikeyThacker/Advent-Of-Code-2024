@@ -13,14 +13,24 @@ def get_lists():
     return sorted(list1), sorted(list2)
 
 
-def main():
+def part1():
     list1, list2 = get_lists()
 
     total_diff = 0
     for i in range(len(list1)):
         total_diff += abs(list1[i] - list2[i])
 
-    print(total_diff)
+    print(f"Part 1: {total_diff}")
 
+def part2():
+    list1, list2 = get_lists()
 
-main()
+    similarity_score = 0
+
+    for num in list1:
+        similarity_score += num * list2.count(num)
+
+    print(f"Part 2: {similarity_score}")
+
+part1()
+part2()
